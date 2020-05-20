@@ -1,0 +1,17 @@
+<h2><%= @song.title %></h2>
+<h3><%= @song.artist_name %></h3>
+<% if @song.released  %>
+  <p>
+    <strong>Released: </strong>
+    <%= @song.release_year %>
+  </p>
+<% end  %>
+<p>
+  <strong>Genre: </strong>
+  <%= @song.genre %>
+</p>
+
+<%= button_to "Delete Song", { action: "destroy", id: @song.id }, 
+          method: :delete, data: { confirm: "Are you sure?" } %>
+<br>
+<%= button_to "Edit", edit_song_path(@song), :id => @song.id, :method => :get %>
