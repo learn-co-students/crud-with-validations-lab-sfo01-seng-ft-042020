@@ -1,0 +1,4 @@
+<h1><%= @song.title %></h1>
+<h2>by: <%= @song.artist_name %></h2>
+
+<%= button_to "Delete Song", song_path(@song), method: :delete %>
